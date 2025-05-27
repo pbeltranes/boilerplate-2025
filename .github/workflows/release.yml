@@ -1,0 +1,30 @@
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        required: false
+        description: "Version to release"
+  pull_request:
+    types:
+      - closed
+
+name: Release
+
+jobs:
+    release_workflow:
+      runs-on: ubuntu-latest
+      permissions:
+        contents: write
+        pull-requests: write
+      steps:
+        - name: gitflow-workflow-action release workflows
+          uses: hoangvvo/gitflow-workflow-action@0.3.8
+          with:
+            develop_branch: "develop"
+            main_branch: "main"
+            version: ${{ inputs.version }}
+            version_increment: true
+            merge_back_from_main: true
+          env:
+            GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}

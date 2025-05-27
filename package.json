@@ -8,7 +8,9 @@
     "build:server": "pnpm --filter server build",
     "build:web": "pnpm --filter web build",
     "start:server": "pnpm --filter server start:prod",
-    "start:web": "pnpm --filter web start"
+    "start:web": "pnpm --filter web start",
+    "lint:server": "pnpm lint",
+    "lint:web": "pnpm --filter web lint"
   },
   "keywords": [],
   "author": "",

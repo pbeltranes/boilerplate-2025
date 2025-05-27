@@ -1,0 +1,17 @@
+name: ESLint
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # Puedes ajustar la versión si necesitas otra
+      - name: Install modules
+        run: pnpm install
+      - name: Run lint for server
+        run: pnpm lint:server
+      - name: Run lint for web
+        run: pnpm lint:web
