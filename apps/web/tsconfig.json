@@ -2,12 +2,14 @@
   "extends": "../../tsconfig.json", // Extend the config options from the root,
   "compilerOptions": {
     // The following options are not required as they've been moved to the root tsconfig
-    // "paths": {
-    //   "@/*": ["./*"]
-    // }
     // "incremental": true,
     // "forceConsistentCasingInFileNames": true,
     // "skipLibCheck": true,
+     "baseUrl": "src",
+    "paths": {
+      // Para que puedas usar `@/components` o `@/utils`
+      "@/*": ["*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -23,8 +25,17 @@
       {
         "name": "next"
       }
-    ],
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  // "aliases": {
+  //   "@/*": ["./src/*"],
+    // "@components": ["./src/components"],
+    // "@hooks": ["./src/hooks"],
+    // "@utils": ["./src/utils"],
+    // "@styles": ["./src/styles"],
+    // "@pages": ["./src/pages"],
+    // "@public": ["./public"]
+  // }
 }

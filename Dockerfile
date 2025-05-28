@@ -2,14 +2,24 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY . .
-
+# Instalar pnpm globalmente con corepack
 RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copiar solo los archivos necesarios
+COPY pnpm-lock.yaml ./
+COPY package.json ./
+COPY pnpm-workspace.yaml ./
+COPY tsconfig.json ./
+COPY apps ./apps
+
+# Instalar dependencias del workspace
 RUN pnpm install --frozen-lockfile
 
-# Build ambos proyectos
-RUN pnpm --filter web... build
-RUN pnpm --filter server... build
+# Build de los proyectos
+RUN pnpm --filter web... build && pnpm --filter server... build
 
-# Script que corre ambos servers
-CMD ["sh", "-c", "pnpm --filter server... start:prod & pnpm --filter web... start"]
+# Exponer puertos si aplica (ajusta según necesidad)
+EXPOSE 3000 3001
+
+# Ejecutar ambos servidores en paralelo de forma segura
+CMD pnpm concurrently "pnpm --filter server... start:prod" "pnpm --filter web... start"
