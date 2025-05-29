@@ -1,17 +1,11 @@
-import { auth } from "@/lib/auth";
-
 export default async function ClientExample() {
-  const session = await auth();
-
-  if (!session?.user) return null;
-
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-3xl font-bold">Client Side Rendering</h1>
       <p>This page fetches session data client side using the React Hook.</p>
       <p>
         It needs the directive at the top of the file to enable client side
-        rendering, and the {JSON.stringify(status)}
+        rendering, and the
         component in{" "}
         <strong>
           <code>client-example/page.tsx</code>
@@ -39,7 +33,7 @@ export default async function ClientExample() {
             Make API Request
           </button> */}
         </div>
-        <pre>{JSON.stringify(session)}</pre>
+
         <p className="italic">
           Note: This example only works when using the Keycloak provider.
         </p>

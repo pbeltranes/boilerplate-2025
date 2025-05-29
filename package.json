@@ -7,6 +7,7 @@
     "generate": "pnpm --filter database... exec prisma generate",
     "dev": "pnpm run --parallel dev",
     "build:server": "pnpm --filter server build",
+    "prebuild": "pnpm --filter database db:generate",
     "build:web": "pnpm --filter web build",
     "start:server": "pnpm --filter server start:prod",
     "start:web": "pnpm --filter web start",
