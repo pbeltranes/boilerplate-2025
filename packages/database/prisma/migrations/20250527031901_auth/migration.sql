@@ -45,6 +45,7 @@ CREATE TABLE `VerificationToken` (
     `identifier` VARCHAR(191) NOT NULL,
     `token` VARCHAR(191) NOT NULL,
     `expires` DATETIME(3) NOT NULL,
+    PRIMARY KEY (`identifier`, `token`),
 
     UNIQUE INDEX `VerificationToken_token_key`(`token`),
     UNIQUE INDEX `VerificationToken_identifier_token_key`(`identifier`, `token`)

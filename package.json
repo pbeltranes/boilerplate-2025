@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "generate": "pnpm --filter database... exec prisma generate",
+    "migrate:deploy": "pnpm --filter database... exec prisma migrate deploy",
+    "migrate:dev": "pnpm --filter database... exec prisma migrate dev",
     "dev": "pnpm run --parallel dev",
     "build:server": "pnpm --filter server build",
     "prebuild": "pnpm --filter database db:generate",
