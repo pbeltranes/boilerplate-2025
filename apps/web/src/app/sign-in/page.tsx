@@ -1,6 +1,6 @@
 "use client";
 import { redirect, useSearchParams } from "next/navigation";
-import { providerMap } from "../../lib/auth";
+import { providerMap } from "@/lib/provider-map";
 import { AuthError } from "next-auth";
 import { signIn } from "next-auth/react";
 import { Suspense } from "react";

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "generate": "pnpm --filter database... exec prisma generate",
     "dev": "pnpm run --parallel dev",
     "build:server": "pnpm --filter server build",
     "build:web": "pnpm --filter web build",
@@ -30,7 +31,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@prisma/client": "5.12.0",
-    "prisma": "5.12.0"
+    "@prisma/client": "6.8.2",
+    "prisma": "6.8.2"
   }
 }

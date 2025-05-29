@@ -4,6 +4,9 @@ import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "database";
+// import { PrismaClient } from "@prisma/client";
+
+// const prisma = new PrismaClient();
 import CredentialsProvider from "next-auth/providers/credentials";
 import { randomUUID } from "crypto";
 import { encode } from "next-auth/jwt";
@@ -38,16 +41,16 @@ const providers: Provider[] = [
   GitHub,
 ];
 
-export const providerMap = providers
-  .map((provider) => {
-    if (typeof provider === "function") {
-      const providerData = provider();
-      return { id: providerData.id, name: providerData.name };
-    } else {
-      return { id: provider.id, name: provider.name };
-    }
-  })
-  .filter((provider) => provider.id !== "credentials");
+// export const providerMap = providers
+//   .map((provider) => {
+//     if (typeof provider === "function") {
+//       const providerData = provider();
+//       return { id: providerData.id, name: providerData.name };
+//     } else {
+//       return { id: provider.id, name: provider.name };
+//     }
+//   })
+//   .filter((provider) => provider.id !== "credentials");
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),

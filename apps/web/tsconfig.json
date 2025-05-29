@@ -5,7 +5,7 @@
     // "incremental": true,
     // "forceConsistentCasingInFileNames": true,
     // "skipLibCheck": true,
-     "baseUrl": "src",
+    "baseUrl": "src",
     "paths": {
       // Para que puedas usar `@/components` o `@/utils`
       "@/*": ["*"]
@@ -28,14 +28,14 @@
     ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
   // "aliases": {
   //   "@/*": ["./src/*"],
-    // "@components": ["./src/components"],
-    // "@hooks": ["./src/hooks"],
-    // "@utils": ["./src/utils"],
-    // "@styles": ["./src/styles"],
-    // "@pages": ["./src/pages"],
-    // "@public": ["./public"]
+  // "@components": ["./src/components"],
+  // "@hooks": ["./src/hooks"],
+  // "@utils": ["./src/utils"],
+  // "@styles": ["./src/styles"],
+  // "@pages": ["./src/pages"],
+  // "@public": ["./public"]
   // }
 }
