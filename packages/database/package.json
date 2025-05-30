@@ -14,7 +14,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.5.2",
   "devDependencies": {
-    "prisma": "catalog:prisma",
+    "prisma": "6.8.2",
     "@types/node": "^22.15.21",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"

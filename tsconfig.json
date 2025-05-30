@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "database": ["packages/database/index.ts"],
-      "database/*": ["packages/database/*"],
+      "ui/*": ["packages/ui/*"],
+      "validation/*": ["packages/validation/*"],
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
