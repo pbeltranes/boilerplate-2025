@@ -8,8 +8,11 @@
     "baseUrl": "src",
     "paths": {
       // Para que puedas usar `@/components` o `@/utils`
-      "@/*": ["*"]
+
+      "@/*": ["*"],
+      "ui/*": ["../../../packages/ui/src/*"]
     },
+
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -30,8 +33,10 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
   // "aliases": {
+  //   "ui/*": ["../../packages/ui/src/*"]
+  // }
   //   "@/*": ["./src/*"],
-  // "@components": ["./src/components"],
+  // "components": ["./src/components"]
   // "@hooks": ["./src/hooks"],
   // "@utils": ["./src/utils"],
   // "@styles": ["./src/styles"],

@@ -1,4 +1,6 @@
-export default async function ClientExample() {
+import { Button } from "ui/components/button";
+
+export default function ClientExample() {
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-3xl font-bold">Client Side Rendering</h1>
@@ -11,6 +13,7 @@ export default async function ClientExample() {
           <code>client-example/page.tsx</code>
         </strong>{" "}
         to provide the session data.
+        <Button />
       </p>
 
       <div className="flex flex-col gap-4 rounded-md p-4">

@@ -5,10 +5,12 @@ const nextConfig: NextConfig = {
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      "@": path.resolve(__dirname, "src"), // 👈 Esto hace que '@/...' funcione
+      "@": path.resolve(__dirname, "src"),
+      "ui": path.resolve(__dirname, "../../packages/ui/src"),
     };
     return config;
   },
+  transpilePackages: ["ui"],
 };
 
 export default nextConfig;

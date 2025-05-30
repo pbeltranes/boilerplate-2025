@@ -12,6 +12,8 @@
     "@auth/prisma-adapter": "^2.9.1",
     "bcryptjs": "^3.0.2",
     "database": "workspace:*",
+    "validation": "workspace:*",
+    "ui": "workspace:*",
     "next": "15.3.2",
     "next-auth": "5.0.0-beta.28",
     "react": "^19.0.0",
